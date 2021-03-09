@@ -2,7 +2,6 @@ const ws = new WebSocket("ws://localhost:3000");
 
 
 ws.onmessage = (msg) => {
-  console.log(msg.data)
   renderMessages(JSON.parse(msg.data));
 };
 
