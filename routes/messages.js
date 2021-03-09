@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+const ws = require("./../wslib")
 const Joi = require("joi");
 const Message = require("../models/message");
 
@@ -24,6 +24,7 @@ router.post("/", function (req, res, next) {
   }
   Message.create({ message: req.body.message, author: req.body.author }).then(
     (result) => {
+      ws.sendMessages()
       // ws.send(result.message)
       // Message.findAll().then(newResult => {
       //   // renderMessages(newResult.map(value => value.message));

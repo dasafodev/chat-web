@@ -10,8 +10,14 @@ a {
 #form{
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
+}
+
+.message{
+  margin-bottom: 1px;
 }
 
 .author{
-  font-size: 8px;
+  font-size: 10px;
+  margin: 0;
 }
